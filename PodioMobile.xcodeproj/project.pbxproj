@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		15AFF0E71A0D5B350086F1B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF0E61A0D5B350086F1B0 /* AppDelegate.swift */; };
+		15AFF0EA1A0D5B350086F1B0 /* PodioMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF0E81A0D5B350086F1B0 /* PodioMobile.xcdatamodeld */; };
+		15AFF0EC1A0D5B350086F1B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF0EB1A0D5B350086F1B0 /* ViewController.swift */; };
+		15AFF0EF1A0D5B350086F1B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15AFF0ED1A0D5B350086F1B0 /* Main.storyboard */; };
+		15AFF0F11A0D5B350086F1B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15AFF0F01A0D5B350086F1B0 /* Images.xcassets */; };
+		15AFF0F41A0D5B350086F1B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15AFF0F21A0D5B350086F1B0 /* LaunchScreen.xib */; };
+		15AFF1001A0D5B350086F1B0 /* PodioMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF0FF1A0D5B350086F1B0 /* PodioMobileTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		15AFF0FA1A0D5B350086F1B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 15AFF0D91A0D5B350086F1B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 15AFF0E01A0D5B350086F1B0;
+			remoteInfo = PodioMobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		15AFF0E11A0D5B350086F1B0 /* PodioMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodioMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		15AFF0E51A0D5B350086F1B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15AFF0E61A0D5B350086F1B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		15AFF0E91A0D5B350086F1B0 /* PodioMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PodioMobile.xcdatamodel; sourceTree = "<group>"; };
+		15AFF0EB1A0D5B350086F1B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		15AFF0EE1A0D5B350086F1B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		15AFF0F01A0D5B350086F1B0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		15AFF0F31A0D5B350086F1B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		15AFF0F91A0D5B350086F1B0 /* PodioMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodioMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		15AFF0FE1A0D5B350086F1B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15AFF0FF1A0D5B350086F1B0 /* PodioMobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodioMobileTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		15AFF0DE1A0D5B350086F1B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15AFF0F61A0D5B350086F1B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		15AFF0D81A0D5B350086F1B0 = {
+			isa = PBXGroup;
+			children = (
+				15AFF0E31A0D5B350086F1B0 /* PodioMobile */,
+				15AFF0FC1A0D5B350086F1B0 /* PodioMobileTests */,
+				15AFF0E21A0D5B350086F1B0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		15AFF0E21A0D5B350086F1B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				15AFF0E11A0D5B350086F1B0 /* PodioMobile.app */,
+				15AFF0F91A0D5B350086F1B0 /* PodioMobileTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		15AFF0E31A0D5B350086F1B0 /* PodioMobile */ = {
+			isa = PBXGroup;
+			children = (
+				15AFF0E61A0D5B350086F1B0 /* AppDelegate.swift */,
+				15AFF0EB1A0D5B350086F1B0 /* ViewController.swift */,
+				15AFF0ED1A0D5B350086F1B0 /* Main.storyboard */,
+				15AFF0F01A0D5B350086F1B0 /* Images.xcassets */,
+				15AFF0F21A0D5B350086F1B0 /* LaunchScreen.xib */,
+				15AFF0E81A0D5B350086F1B0 /* PodioMobile.xcdatamodeld */,
+				15AFF0E41A0D5B350086F1B0 /* Supporting Files */,
+			);
+			path = PodioMobile;
+			sourceTree = "<group>";
+		};
+		15AFF0E41A0D5B350086F1B0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				15AFF0E51A0D5B350086F1B0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		15AFF0FC1A0D5B350086F1B0 /* PodioMobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				15AFF0FF1A0D5B350086F1B0 /* PodioMobileTests.swift */,
+				15AFF0FD1A0D5B350086F1B0 /* Supporting Files */,
+			);
+			path = PodioMobileTests;
+			sourceTree = "<group>";
+		};
+		15AFF0FD1A0D5B350086F1B0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				15AFF0FE1A0D5B350086F1B0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		15AFF0E01A0D5B350086F1B0 /* PodioMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15AFF1031A0D5B350086F1B0 /* Build configuration list for PBXNativeTarget "PodioMobile" */;
+			buildPhases = (
+				15AFF0DD1A0D5B350086F1B0 /* Sources */,
+				15AFF0DE1A0D5B350086F1B0 /* Frameworks */,
+				15AFF0DF1A0D5B350086F1B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PodioMobile;
+			productName = PodioMobile;
+			productReference = 15AFF0E11A0D5B350086F1B0 /* PodioMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		15AFF0F81A0D5B350086F1B0 /* PodioMobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 15AFF1061A0D5B350086F1B0 /* Build configuration list for PBXNativeTarget "PodioMobileTests" */;
+			buildPhases = (
+				15AFF0F51A0D5B350086F1B0 /* Sources */,
+				15AFF0F61A0D5B350086F1B0 /* Frameworks */,
+				15AFF0F71A0D5B350086F1B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				15AFF0FB1A0D5B350086F1B0 /* PBXTargetDependency */,
+			);
+			name = PodioMobileTests;
+			productName = PodioMobileTests;
+			productReference = 15AFF0F91A0D5B350086F1B0 /* PodioMobileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		15AFF0D91A0D5B350086F1B0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Bruno Philipe";
+				TargetAttributes = {
+					15AFF0E01A0D5B350086F1B0 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					15AFF0F81A0D5B350086F1B0 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 15AFF0E01A0D5B350086F1B0;
+					};
+				};
+			};
+			buildConfigurationList = 15AFF0DC1A0D5B350086F1B0 /* Build configuration list for PBXProject "PodioMobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 15AFF0D81A0D5B350086F1B0;
+			productRefGroup = 15AFF0E21A0D5B350086F1B0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				15AFF0E01A0D5B350086F1B0 /* PodioMobile */,
+				15AFF0F81A0D5B350086F1B0 /* PodioMobileTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		15AFF0DF1A0D5B350086F1B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15AFF0EF1A0D5B350086F1B0 /* Main.storyboard in Resources */,
+				15AFF0F41A0D5B350086F1B0 /* LaunchScreen.xib in Resources */,
+				15AFF0F11A0D5B350086F1B0 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15AFF0F71A0D5B350086F1B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		15AFF0DD1A0D5B350086F1B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15AFF0EC1A0D5B350086F1B0 /* ViewController.swift in Sources */,
+				15AFF0E71A0D5B350086F1B0 /* AppDelegate.swift in Sources */,
+				15AFF0EA1A0D5B350086F1B0 /* PodioMobile.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		15AFF0F51A0D5B350086F1B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				15AFF1001A0D5B350086F1B0 /* PodioMobileTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		15AFF0FB1A0D5B350086F1B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 15AFF0E01A0D5B350086F1B0 /* PodioMobile */;
+			targetProxy = 15AFF0FA1A0D5B350086F1B0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		15AFF0ED1A0D5B350086F1B0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15AFF0EE1A0D5B350086F1B0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		15AFF0F21A0D5B350086F1B0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				15AFF0F31A0D5B350086F1B0 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		15AFF1011A0D5B350086F1B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		15AFF1021A0D5B350086F1B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		15AFF1041A0D5B350086F1B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PodioMobile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		15AFF1051A0D5B350086F1B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PodioMobile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		15AFF1071A0D5B350086F1B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PodioMobileTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PodioMobile.app/PodioMobile";
+			};
+			name = Debug;
+		};
+		15AFF1081A0D5B350086F1B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PodioMobileTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PodioMobile.app/PodioMobile";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		15AFF0DC1A0D5B350086F1B0 /* Build configuration list for PBXProject "PodioMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15AFF1011A0D5B350086F1B0 /* Debug */,
+				15AFF1021A0D5B350086F1B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		15AFF1031A0D5B350086F1B0 /* Build configuration list for PBXNativeTarget "PodioMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15AFF1041A0D5B350086F1B0 /* Debug */,
+				15AFF1051A0D5B350086F1B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		15AFF1061A0D5B350086F1B0 /* Build configuration list for PBXNativeTarget "PodioMobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				15AFF1071A0D5B350086F1B0 /* Debug */,
+				15AFF1081A0D5B350086F1B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		15AFF0E81A0D5B350086F1B0 /* PodioMobile.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				15AFF0E91A0D5B350086F1B0 /* PodioMobile.xcdatamodel */,
+			);
+			currentVersion = 15AFF0E91A0D5B350086F1B0 /* PodioMobile.xcdatamodel */;
+			path = PodioMobile.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 15AFF0D91A0D5B350086F1B0 /* Project object */;
+}
