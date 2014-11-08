@@ -16,6 +16,7 @@
 		15AFF10C1A0D6A280086F1B0 /* ServerDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF10B1A0D6A280086F1B0 /* ServerDispatcher.swift */; };
 		15AFF10E1A0D855F0086F1B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF10D1A0D855F0086F1B0 /* LoginViewController.swift */; };
 		15AFF1101A0D88B10086F1B0 /* WorkspacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF10F1A0D88B10086F1B0 /* WorkspacesViewController.swift */; };
+		15AFF1151A0ED7BC0086F1B0 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF1091A0D66870086F1B0 /* ServerManager.swift */; };
 		58E0531603F74178A208769F /* libPods-PodioMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 181AB2720007408C9BDF3E2D /* libPods-PodioMobile.a */; };
 /* End PBXBuildFile section */
 
@@ -284,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15AFF1151A0ED7BC0086F1B0 /* ServerManager.swift in Sources */,
 				15AFF1001A0D5B350086F1B0 /* PodioMobileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
