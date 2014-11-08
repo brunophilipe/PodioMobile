@@ -18,20 +18,25 @@ enum ServerOperationMethod: Int
 }
 
 class ServerManager: NSObject {
-	private let serverDispatcher = ServerDispatcher()
+	private var serverDispatcher: ServerDispatcher
 	private let OAuthKey = "podio-puzzle"
 	private let OAuthSecret = "2u8c5SbylhvJ1uzeYMIsNS9fePA6hlkAyGtGjlWaN2r9FrThhcmwBh67EPHUpCHd"
 
-	class func sharedManager() -> ServerManager
-	{
-		var instance: ServerManager?
-		let lockQueue = dispatch_queue_create("PodioMobile.ServerManager", nil)
-		dispatch_sync(lockQueue) {
-			if (instance == nil) {
-				instance = ServerManager();
-			}
+	class var sharedManager: ServerManager {
+		struct Static {
+			static var instance: ServerManager?
+			static var token: dispatch_once_t = 0
 		}
-		return instance!;
+
+		dispatch_once(&Static.token) {
+			Static.instance = ServerManager()
+		}
+
+		return Static.instance!
+	}
+
+	override init() {
+		self.serverDispatcher = ServerDispatcher()
 	}
 
 	func setAuthorization(authorization: String?)
@@ -44,7 +49,7 @@ class ServerManager: NSObject {
 		return self.serverDispatcher.authorization != nil
 	}
 
-	func performServerRequest(route: String, parameters: Dictionary<String, AnyObject>?, method: ServerOperationMethod, completion: ServerCallback)
+	func performServerRequest(route: String, parameters: [String : AnyObject]?, method: ServerOperationMethod, completion: ServerCallback)
 	{
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
 			switch (method)

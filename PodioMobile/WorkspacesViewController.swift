@@ -9,15 +9,16 @@
 import UIKit
 
 class WorkspacesViewController: UITableViewController {
+	private var organizations: [[String : AnyObject]]?
+	private var didLoadOrganizations = false, noOrganizations = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+		if ServerManager.sharedManager.isAuthenticated()
+		{
+			self.updateOrganizations()
+		}
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,79 +29,125 @@ class WorkspacesViewController: UITableViewController {
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
 
-		if (!ServerManager.sharedManager().isAuthenticated())
+		if !ServerManager.sharedManager.isAuthenticated()
 		{
 			self.performSegueWithIdentifier("login", sender: nil)
 		}
+		else
+		{
+			self.updateOrganizations()
+		}
 	}
 
-    // MARK: - Table view data source
+	@IBAction func didTapReloadButton(sender: AnyObject) {
+		self.updateOrganizations()
+	}
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 0
-    }
+	func updateOrganizations()
+	{
+		ServerManager.sharedManager.retreiveUserOrganizations({ (result: AnyObject?, error) -> Void in
+			var fail: Bool = false
+			if !error {
+				if var typedResult = result! as? [[String : AnyObject]] {
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return 0
-    }
+					typedResult.sort({ (elementA: [String : AnyObject], elementB: [String : AnyObject]) -> Bool in
+						elementB["name"] as? String > elementA["name"] as? String
+					})
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+					for (var organization: [String : AnyObject]) in typedResult
+					{
+						let sortedSpaces: [[String : AnyObject]] = (organization["spaces"] as [[String : AnyObject]]).sorted({
+							(elementA: [String : AnyObject], elementB: [String : AnyObject]) -> Bool in
+								elementB["name"] as? String > elementA["name"] as? String
+							}
+						)
 
-        // Configure the cell...
+						organization["spaces"] = sortedSpaces
+					}
 
-        return cell
-    }
-    */
+					self.didLoadOrganizations = true
+					self.organizations = typedResult
+					self.tableView.reloadData()
+				} else {
+					fail = true
+				}
+			} else {
+				fail = true
+			}
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
+			if fail {
+				var alert = UIAlertController(title: "Error", message: "There was an error retreiving the organizations. Please check your connection and try again.", preferredStyle: UIAlertControllerStyle.Alert)
+				alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
+				self.presentViewController(alert, animated: true, completion: nil)
+			}
+		})
+	}
+}
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
+extension WorkspacesViewController : UITableViewDelegate, UITableViewDataSource
+{
+	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+		if self.didLoadOrganizations
+		{
+			var count = self.organizations!.count
+			self.noOrganizations = count == 0
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+			return max(count, 1)
+		}
+		else
+		{
+			return 1
+		}
+	}
 
-    }
-    */
+	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		if self.didLoadOrganizations && !self.noOrganizations
+		{
+			let organization = self.organizations![section] as [String : AnyObject]
+			var count = (organization["spaces"] as [AnyObject]).count
+			return max(count, 1)
+		}
+		else
+		{
+			return 1
+		}
+	}
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
+	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+		let identifier_workspace = "cell_workspace"
+		let identifier_loading = "cell_loading"
+		let identifier_empty = "cell_empty"
 
-    /*
-    // MARK: - Navigation
+		var cell: UITableViewCell!
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
+		if self.didLoadOrganizations && !self.noOrganizations
+		{
+			cell = tableView.dequeueReusableCellWithIdentifier(identifier_workspace, forIndexPath: indexPath) as UITableViewCell
 
+			let organization = self.organizations![indexPath.section] as [String : AnyObject]
+			let space = (organization["spaces"] as [AnyObject])[indexPath.row] as [String : AnyObject]
+
+			// Configure the cell...
+			cell.textLabel.text = space["name"] as? String
+		}
+		else if self.noOrganizations
+		{
+			cell = tableView.dequeueReusableCellWithIdentifier(identifier_empty, forIndexPath: indexPath) as UITableViewCell
+		}
+		else
+		{
+			cell = tableView.dequeueReusableCellWithIdentifier(identifier_loading, forIndexPath: indexPath) as UITableViewCell
+		}
+
+		return cell
+	}
+
+	override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		if self.didLoadOrganizations && !self.noOrganizations
+		{
+			let organization = self.organizations![section] as [String : AnyObject]
+			return organization["name"] as? String
+		}
+		return nil
+	}
 }

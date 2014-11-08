@@ -47,6 +47,10 @@ class LoginViewController : UIViewController
 			})
 		}
 	}
+
+	override func preferredStatusBarStyle() -> UIStatusBarStyle {
+		return UIStatusBarStyle.LightContent
+	}
 }
 
 extension LoginViewController
@@ -55,7 +59,7 @@ extension LoginViewController
 		let username = self.textField_email.text
 		let password = self.textField_password.text
 
-		ServerManager.sharedManager().loginWithUsernamePassword(username, password: password, completion: { (result, error) -> Void in
+		ServerManager.sharedManager.loginWithUsernamePassword(username, password: password, completion: { (result, error) -> Void in
 			if (error)
 			{
 				var alert = UIAlertController(title: "Error", message: "Please check your credentials and try again.", preferredStyle: UIAlertControllerStyle.Alert)
@@ -64,9 +68,9 @@ extension LoginViewController
 			}
 			else if (result != nil)
 			{
-				if let resultDict = result! as? Dictionary<String, AnyObject>
+				if let resultDict = result! as? [String : AnyObject]
 				{
-					ServerManager.sharedManager().setAuthorization(resultDict["access_token"] as? String)
+					ServerManager.sharedManager.setAuthorization(resultDict["access_token"] as? String)
 					self.dismissViewControllerAnimated(true, completion: nil)
 				}
 			}

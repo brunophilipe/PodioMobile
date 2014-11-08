@@ -13,7 +13,7 @@ class ServerDispatcher: NSObject {
 
 	var authorization: String?
 
-	func getWithParameters(route: String, parameters: Dictionary<String, AnyObject>?) -> Dictionary<String, AnyObject>?
+	func getWithParameters(route: String, parameters: [String : AnyObject]?) -> [String : AnyObject]?
 	{
 		var requestPath = serviceEndpoint.stringByAppendingString(route)
 
@@ -25,7 +25,7 @@ class ServerDispatcher: NSObject {
 		return self.executeServerRequest(NSURL(string: requestPath)!, method: "GET", data: nil)
 	}
 
-	func postWithParameters(route: String, parameters: Dictionary<String, AnyObject>?) -> Dictionary<String, AnyObject>?
+	func postWithParameters(route: String, parameters: [String : AnyObject]?) -> [String : AnyObject]?
 	{
 		var requestPath = serviceEndpoint.stringByAppendingString(route)
 
@@ -38,7 +38,7 @@ class ServerDispatcher: NSObject {
 		return nil
 	}
 
-	func executeServerRequest(url: NSURL, method: String, data: NSData?) -> Dictionary<String, AnyObject>
+	func executeServerRequest(url: NSURL, method: String, data: NSData?) -> [String : AnyObject]
 	{
 		var request = NSMutableURLRequest(URL: url)
 
@@ -84,7 +84,7 @@ class ServerDispatcher: NSObject {
 		return ["success": "ERROR", "status": "-1"]
 	}
 
-	func urlizeParameters(parameters: Dictionary<String, AnyObject>?) -> String?
+	func urlizeParameters(parameters: [String : AnyObject]?) -> String?
 	{
 		var result = ""
 
