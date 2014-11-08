@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		15AFF0E71A0D5B350086F1B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF0E61A0D5B350086F1B0 /* AppDelegate.swift */; };
 		15AFF0EA1A0D5B350086F1B0 /* PodioMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF0E81A0D5B350086F1B0 /* PodioMobile.xcdatamodeld */; };
-		15AFF0EC1A0D5B350086F1B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF0EB1A0D5B350086F1B0 /* ViewController.swift */; };
 		15AFF0EF1A0D5B350086F1B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15AFF0ED1A0D5B350086F1B0 /* Main.storyboard */; };
 		15AFF0F11A0D5B350086F1B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15AFF0F01A0D5B350086F1B0 /* Images.xcassets */; };
 		15AFF0F41A0D5B350086F1B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15AFF0F21A0D5B350086F1B0 /* LaunchScreen.xib */; };
 		15AFF1001A0D5B350086F1B0 /* PodioMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF0FF1A0D5B350086F1B0 /* PodioMobileTests.swift */; };
+		15AFF10A1A0D66870086F1B0 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF1091A0D66870086F1B0 /* ServerManager.swift */; };
+		15AFF10C1A0D6A280086F1B0 /* ServerDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF10B1A0D6A280086F1B0 /* ServerDispatcher.swift */; };
+		15AFF10E1A0D855F0086F1B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF10D1A0D855F0086F1B0 /* LoginViewController.swift */; };
+		15AFF1101A0D88B10086F1B0 /* WorkspacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF10F1A0D88B10086F1B0 /* WorkspacesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +34,16 @@
 		15AFF0E51A0D5B350086F1B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15AFF0E61A0D5B350086F1B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15AFF0E91A0D5B350086F1B0 /* PodioMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PodioMobile.xcdatamodel; sourceTree = "<group>"; };
-		15AFF0EB1A0D5B350086F1B0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		15AFF0EE1A0D5B350086F1B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		15AFF0F01A0D5B350086F1B0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		15AFF0F31A0D5B350086F1B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		15AFF0F91A0D5B350086F1B0 /* PodioMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PodioMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15AFF0FE1A0D5B350086F1B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15AFF0FF1A0D5B350086F1B0 /* PodioMobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodioMobileTests.swift; sourceTree = "<group>"; };
+		15AFF1091A0D66870086F1B0 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		15AFF10B1A0D6A280086F1B0 /* ServerDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerDispatcher.swift; sourceTree = "<group>"; };
+		15AFF10D1A0D855F0086F1B0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		15AFF10F1A0D88B10086F1B0 /* WorkspacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkspacesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +86,10 @@
 			isa = PBXGroup;
 			children = (
 				15AFF0E61A0D5B350086F1B0 /* AppDelegate.swift */,
-				15AFF0EB1A0D5B350086F1B0 /* ViewController.swift */,
+				15AFF10D1A0D855F0086F1B0 /* LoginViewController.swift */,
+				15AFF10F1A0D88B10086F1B0 /* WorkspacesViewController.swift */,
+				15AFF1091A0D66870086F1B0 /* ServerManager.swift */,
+				15AFF10B1A0D6A280086F1B0 /* ServerDispatcher.swift */,
 				15AFF0ED1A0D5B350086F1B0 /* Main.storyboard */,
 				15AFF0F01A0D5B350086F1B0 /* Images.xcassets */,
 				15AFF0F21A0D5B350086F1B0 /* LaunchScreen.xib */,
@@ -215,9 +224,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15AFF0EC1A0D5B350086F1B0 /* ViewController.swift in Sources */,
+				15AFF10E1A0D855F0086F1B0 /* LoginViewController.swift in Sources */,
+				15AFF10A1A0D66870086F1B0 /* ServerManager.swift in Sources */,
 				15AFF0E71A0D5B350086F1B0 /* AppDelegate.swift in Sources */,
 				15AFF0EA1A0D5B350086F1B0 /* PodioMobile.xcdatamodeld in Sources */,
+				15AFF1101A0D88B10086F1B0 /* WorkspacesViewController.swift in Sources */,
+				15AFF10C1A0D6A280086F1B0 /* ServerDispatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
