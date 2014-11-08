@@ -17,6 +17,7 @@
 		15AFF10C1A0D6A280086F1B0 /* ServerDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF10B1A0D6A280086F1B0 /* ServerDispatcher.swift */; };
 		15AFF10E1A0D855F0086F1B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF10D1A0D855F0086F1B0 /* LoginViewController.swift */; };
 		15AFF1101A0D88B10086F1B0 /* WorkspacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF10F1A0D88B10086F1B0 /* WorkspacesViewController.swift */; };
+		58E0531603F74178A208769F /* libPods-PodioMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 181AB2720007408C9BDF3E2D /* libPods-PodioMobile.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,9 @@
 		15AFF10B1A0D6A280086F1B0 /* ServerDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerDispatcher.swift; sourceTree = "<group>"; };
 		15AFF10D1A0D855F0086F1B0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		15AFF10F1A0D88B10086F1B0 /* WorkspacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkspacesViewController.swift; sourceTree = "<group>"; };
+		15AFF1111A0D9B2E0086F1B0 /* PodioMobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PodioMobile-Bridging-Header.h"; sourceTree = "<group>"; };
+		181AB2720007408C9BDF3E2D /* libPods-PodioMobile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PodioMobile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FF0257007BC4558A0B84C46 /* Pods-PodioMobile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodioMobile.xcconfig"; path = "Pods/Pods-PodioMobile.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58E0531603F74178A208769F /* libPods-PodioMobile.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +75,8 @@
 				15AFF0E31A0D5B350086F1B0 /* PodioMobile */,
 				15AFF0FC1A0D5B350086F1B0 /* PodioMobileTests */,
 				15AFF0E21A0D5B350086F1B0 /* Products */,
+				8FF0257007BC4558A0B84C46 /* Pods-PodioMobile.xcconfig */,
+				8FDB8784A7234BFEA5591634 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +102,7 @@
 				15AFF0F21A0D5B350086F1B0 /* LaunchScreen.xib */,
 				15AFF0E81A0D5B350086F1B0 /* PodioMobile.xcdatamodeld */,
 				15AFF0E41A0D5B350086F1B0 /* Supporting Files */,
+				15AFF1111A0D9B2E0086F1B0 /* PodioMobile-Bridging-Header.h */,
 			);
 			path = PodioMobile;
 			sourceTree = "<group>";
@@ -124,6 +132,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8FDB8784A7234BFEA5591634 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				181AB2720007408C9BDF3E2D /* libPods-PodioMobile.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 15AFF1031A0D5B350086F1B0 /* Build configuration list for PBXNativeTarget "PodioMobile" */;
 			buildPhases = (
+				8DF57102281D40B0944FFA04 /* Check Pods Manifest.lock */,
 				15AFF0DD1A0D5B350086F1B0 /* Sources */,
 				15AFF0DE1A0D5B350086F1B0 /* Frameworks */,
 				15AFF0DF1A0D5B350086F1B0 /* Resources */,
+				9981BEC4BAB740ABB621F02A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +236,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8DF57102281D40B0944FFA04 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9981BEC4BAB740ABB621F02A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-PodioMobile-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		15AFF0DD1A0D5B350086F1B0 /* Sources */ = {
@@ -350,21 +401,28 @@
 		};
 		15AFF1041A0D5B350086F1B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FF0257007BC4558A0B84C46 /* Pods-PodioMobile.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = PodioMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PodioMobile/PodioMobile-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		15AFF1051A0D5B350086F1B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FF0257007BC4558A0B84C46 /* Pods-PodioMobile.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = PodioMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PodioMobile/PodioMobile-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -421,6 +479,7 @@
 				15AFF1051A0D5B350086F1B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		15AFF1061A0D5B350086F1B0 /* Build configuration list for PBXNativeTarget "PodioMobileTests" */ = {
 			isa = XCConfigurationList;
@@ -429,6 +488,7 @@
 				15AFF1081A0D5B350086F1B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

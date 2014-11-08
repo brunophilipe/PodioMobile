@@ -29,6 +29,7 @@ class LoginViewController : UIViewController
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+		self.view.addKeyboardPanningWithActionHandler(nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -116,7 +117,7 @@ extension LoginViewController : UITextFieldDelegate
 			UIView.commitAnimations()
 
 			self.constraint_topSpace.constant = UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation) ? 15.0 : 30.0
-			self.constraint_trailingSpace.constant = ((self.view.bounds.size.width/2.0) - 150.0) * -1
+			self.constraint_trailingSpace.constant = (self.view.bounds.size.width/2.0) - 150.0
 		}
 		else if (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad && UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation))
 		{

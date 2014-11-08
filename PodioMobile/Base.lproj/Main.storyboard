@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -107,10 +106,10 @@
                             <constraint firstItem="P5b-Cm-hwo" firstAttribute="top" secondItem="J3a-u3-RgV" secondAttribute="bottom" constant="20" id="EkE-ed-QVq">
                                 <variation key="heightClass=compact" constant="8"/>
                             </constraint>
-                            <constraint firstItem="J3a-u3-RgV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="GKz-PP-LIf"/>
+                            <constraint firstItem="J3a-u3-RgV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="30" id="GKz-PP-LIf"/>
                             <constraint firstAttribute="centerX" secondItem="cbU-Mh-Vvd" secondAttribute="centerX" id="Mze-dm-3MM"/>
                             <constraint firstAttribute="centerX" secondItem="J3a-u3-RgV" secondAttribute="centerX" id="Shx-vG-yj1"/>
-                            <constraint firstItem="Hzc-zk-exg" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="Siw-aP-wmL"/>
+                            <constraint firstAttribute="trailing" secondItem="Hzc-zk-exg" secondAttribute="trailing" constant="30" id="Siw-aP-wmL"/>
                             <constraint firstItem="TBt-CF-tIm" firstAttribute="centerX" secondItem="cbU-Mh-Vvd" secondAttribute="centerX" id="TlR-8q-Pk6"/>
                             <constraint firstAttribute="centerX" secondItem="TBt-CF-tIm" secondAttribute="centerX" id="Tqq-3c-yg7"/>
                             <constraint firstItem="TBt-CF-tIm" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="243.5" id="ZHr-dA-vgx">
@@ -130,10 +129,10 @@
                             <mask key="constraints">
                                 <exclude reference="GKz-PP-LIf"/>
                                 <exclude reference="fIr-oG-Eh7"/>
-                                <exclude reference="Siw-aP-wmL"/>
                                 <exclude reference="7gI-BW-vLB"/>
                                 <exclude reference="TlR-8q-Pk6"/>
                                 <exclude reference="psy-iN-pKJ"/>
+                                <exclude reference="Siw-aP-wmL"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact">
@@ -142,13 +141,13 @@
                                 <exclude reference="Shx-vG-yj1"/>
                                 <include reference="fIr-oG-Eh7"/>
                                 <exclude reference="B1F-kx-fp8"/>
-                                <exclude reference="B4W-3L-kH4"/>
-                                <include reference="Siw-aP-wmL"/>
-                                <exclude reference="Mze-dm-3MM"/>
                                 <include reference="7gI-BW-vLB"/>
                                 <include reference="TlR-8q-Pk6"/>
                                 <exclude reference="Tqq-3c-yg7"/>
                                 <include reference="psy-iN-pKJ"/>
+                                <exclude reference="B4W-3L-kH4"/>
+                                <include reference="Siw-aP-wmL"/>
+                                <exclude reference="Mze-dm-3MM"/>
                                 <exclude reference="fov-JL-vtu"/>
                             </mask>
                         </variation>
