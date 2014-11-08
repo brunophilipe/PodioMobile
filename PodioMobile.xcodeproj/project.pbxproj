@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		15AFF0E71A0D5B350086F1B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF0E61A0D5B350086F1B0 /* AppDelegate.swift */; };
-		15AFF0EA1A0D5B350086F1B0 /* PodioMobile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 15AFF0E81A0D5B350086F1B0 /* PodioMobile.xcdatamodeld */; };
 		15AFF0EF1A0D5B350086F1B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15AFF0ED1A0D5B350086F1B0 /* Main.storyboard */; };
 		15AFF0F11A0D5B350086F1B0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15AFF0F01A0D5B350086F1B0 /* Images.xcassets */; };
 		15AFF0F41A0D5B350086F1B0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15AFF0F21A0D5B350086F1B0 /* LaunchScreen.xib */; };
@@ -34,7 +33,6 @@
 		15AFF0E11A0D5B350086F1B0 /* PodioMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodioMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15AFF0E51A0D5B350086F1B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15AFF0E61A0D5B350086F1B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		15AFF0E91A0D5B350086F1B0 /* PodioMobile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PodioMobile.xcdatamodel; sourceTree = "<group>"; };
 		15AFF0EE1A0D5B350086F1B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		15AFF0F01A0D5B350086F1B0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		15AFF0F31A0D5B350086F1B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 				15AFF0ED1A0D5B350086F1B0 /* Main.storyboard */,
 				15AFF0F01A0D5B350086F1B0 /* Images.xcassets */,
 				15AFF0F21A0D5B350086F1B0 /* LaunchScreen.xib */,
-				15AFF0E81A0D5B350086F1B0 /* PodioMobile.xcdatamodeld */,
 				15AFF0E41A0D5B350086F1B0 /* Supporting Files */,
 				15AFF1111A0D9B2E0086F1B0 /* PodioMobile-Bridging-Header.h */,
 			);
@@ -278,7 +275,6 @@
 				15AFF10E1A0D855F0086F1B0 /* LoginViewController.swift in Sources */,
 				15AFF10A1A0D66870086F1B0 /* ServerManager.swift in Sources */,
 				15AFF0E71A0D5B350086F1B0 /* AppDelegate.swift in Sources */,
-				15AFF0EA1A0D5B350086F1B0 /* PodioMobile.xcdatamodeld in Sources */,
 				15AFF1101A0D88B10086F1B0 /* WorkspacesViewController.swift in Sources */,
 				15AFF10C1A0D6A280086F1B0 /* ServerDispatcher.swift in Sources */,
 			);
@@ -491,19 +487,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		15AFF0E81A0D5B350086F1B0 /* PodioMobile.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				15AFF0E91A0D5B350086F1B0 /* PodioMobile.xcdatamodel */,
-			);
-			currentVersion = 15AFF0E91A0D5B350086F1B0 /* PodioMobile.xcdatamodel */;
-			path = PodioMobile.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 15AFF0D91A0D5B350086F1B0 /* Project object */;
 }

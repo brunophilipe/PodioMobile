@@ -40,6 +40,8 @@ class WorkspacesViewController: UITableViewController {
 	}
 
 	@IBAction func didTapReloadButton(sender: AnyObject) {
+		self.didLoadOrganizations = false
+		self.tableView.reloadData()
 		self.updateOrganizations()
 	}
 
