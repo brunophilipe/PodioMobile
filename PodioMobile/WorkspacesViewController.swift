@@ -61,10 +61,12 @@ class WorkspacesViewController: UITableViewController {
 			if !error {
 				if var typedResult = result! as? [[String : AnyObject]] {
 
+					// Sorts organizations by name
 					typedResult.sort({ (elementA: [String : AnyObject], elementB: [String : AnyObject]) -> Bool in
 						elementB["name"] as? String > elementA["name"] as? String
 					})
 
+					// Sorts workspaces inside each organization by name
 					for (var organization: [String : AnyObject]) in typedResult
 					{
 						let sortedSpaces: [[String : AnyObject]] = (organization["spaces"] as [[String : AnyObject]]).sorted({
@@ -178,7 +180,6 @@ extension WorkspacesViewController : UITableViewDelegate, UITableViewDataSource
 			let organization = self.organizations![indexPath.section] as [String : AnyObject]
 			let space = (organization["spaces"] as [AnyObject])[indexPath.row] as [String : AnyObject]
 
-			// Configure the cell...
 			cell.textLabel.text = space["name"] as? String
 		}
 		else if self.noOrganizations

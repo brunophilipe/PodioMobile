@@ -40,7 +40,7 @@ class ServerDispatcher: NSObject {
 
 	func buildURLRequest(url: NSURL, method: String, data: NSData?) -> NSURLRequest
 	{
-		var request = NSMutableURLRequest(URL: url)
+		var request = NSMutableURLRequest(URL: url, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 10.0)
 
 		if self.authorization != nil
 		{
@@ -88,7 +88,7 @@ class ServerDispatcher: NSObject {
 			}
 		}
 
-		return ["success": "ERROR", "status": "-1"]
+		return ["success": "ERROR", "data": ["reason": "timeout"]]
 	}
 
 	func urlizeParameters(parameters: [String : AnyObject]?) -> String?

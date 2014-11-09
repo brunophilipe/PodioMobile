@@ -70,7 +70,16 @@ extension LoginViewController
 		ServerManager.sharedManager.loginWithUsernamePassword(username, password: password, completion: { (result, error) -> Void in
 			if (error)
 			{
-				var alert = UIAlertController(title: "Error", message: "Please check your credentials and try again.", preferredStyle: UIAlertControllerStyle.Alert)
+				var alert: UIAlertController!
+
+				if result != nil && result!["reason"] as? String == "timeout"
+				{
+					alert = UIAlertController(title: "Error", message: "The connection timed-out. Please check your connection and try again.", preferredStyle: UIAlertControllerStyle.Alert)
+				}
+				else
+				{
+					alert = UIAlertController(title: "Error", message: "Please check your credentials and try again.", preferredStyle: UIAlertControllerStyle.Alert)
+				}
 				alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
 				self.presentViewController(alert, animated: true, completion: { () -> Void in
 					self.button_login.enabled = true
