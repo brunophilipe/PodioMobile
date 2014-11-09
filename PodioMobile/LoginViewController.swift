@@ -34,7 +34,15 @@ class LoginViewController : UIViewController
 		self.view.addKeyboardPanningWithActionHandler(nil)
 
 		self.navigationController?.navigationBarHidden = true
+		self.animatableViews.map({ $0.layer.opacity = 0.0 })
     }
+
+	override func viewDidAppear(animated: Bool) {
+		UIView.animateWithDuration(0.3, animations: { () -> Void in
+			self.animatableViews.map { $0.layer.opacity = 1.0 }
+			return
+		})
+	}
 
 	override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
 		super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)

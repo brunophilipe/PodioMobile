@@ -29,6 +29,10 @@ class WorkspacesViewController: UITableViewController {
 		super.viewDidAppear(animated)
 	}
 
+	override func preferredStatusBarStyle() -> UIStatusBarStyle {
+		return UIStatusBarStyle.Default
+	}
+
 	@IBAction func didTapReloadButton(sender: AnyObject) {
 		if let barButton = sender as? UIBarButtonItem
 		{

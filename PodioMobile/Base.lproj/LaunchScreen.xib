@@ -12,7 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PodioMobile" translatesAutoresizingMaskIntoConstraints="NO" id="nWT-7Z-HlL">
-                    <rect key="frame" x="90" y="148" width="301" height="129"/>
+                    <rect key="frame" x="90" y="60" width="301" height="129"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="nWT-7Z-HlL" secondAttribute="height" multiplier="7:3" id="BDy-ES-8BR"/>
                         <constraint firstAttribute="width" constant="180" id="QXS-2b-gfK"/>
@@ -34,7 +34,7 @@
                     </variation>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PodioMobile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Raw-Kp-luJ">
-                    <rect key="frame" x="164" y="297" width="152.5" height="34.5"/>
+                    <rect key="frame" x="164" y="209" width="152.5" height="34.5"/>
                     <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="30"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -42,13 +42,14 @@
             </subviews>
             <color key="backgroundColor" red="0.31764705879999999" green="0.56862745100000001" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="nWT-7Z-HlL" firstAttribute="width" secondItem="nWT-7Z-HlL" secondAttribute="height" multiplier="7:3" id="481-Z8-0ad"/>
                 <constraint firstAttribute="centerX" secondItem="nWT-7Z-HlL" secondAttribute="centerX" id="BUF-Bb-OWZ"/>
                 <constraint firstItem="Raw-Kp-luJ" firstAttribute="top" secondItem="nWT-7Z-HlL" secondAttribute="bottom" constant="20" id="NfW-Qa-gFy"/>
+                <constraint firstItem="nWT-7Z-HlL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="60" id="T2U-5g-HAI">
+                    <variation key="heightClass=compact" constant="120"/>
+                </constraint>
                 <constraint firstAttribute="centerX" secondItem="Raw-Kp-luJ" secondAttribute="centerX" id="lQH-7a-nuI"/>
-                <constraint firstAttribute="centerY" secondItem="nWT-7Z-HlL" secondAttribute="centerY" constant="28" id="tXJ-CT-5xA"/>
             </constraints>
-            <nil key="simulatedStatusBarMetrics"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="548" y="455"/>
         </view>

@@ -173,6 +173,7 @@
                         <outletCollection property="animatableViews" destination="cbU-Mh-Vvd" collectionClass="NSMutableArray" id="2rr-Jy-wAY"/>
                         <outletCollection property="animatableViews" destination="Hzc-zk-exg" collectionClass="NSMutableArray" id="U8f-uH-fQN"/>
                         <outletCollection property="animatableViews" destination="TBt-CF-tIm" collectionClass="NSMutableArray" id="VL6-gj-ir1"/>
+                        <outletCollection property="animatableViews" destination="Uvk-f4-vuw" collectionClass="NSMutableArray" id="ggm-nz-Ng8"/>
                         <segue destination="w4N-fu-30c" kind="show" identifier="proceed" id="19K-C1-pMe"/>
                     </connections>
                 </viewController>
