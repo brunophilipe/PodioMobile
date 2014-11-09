@@ -12,6 +12,7 @@ class WorkspacesViewController: UITableViewController {
 	private var organizations: [[String : AnyObject]]?
 	private var didLoadOrganizations = false, noOrganizations = false, preparingAnimations = false
 	private var elapsedAnimationsTime = 0.0
+	private var refreshButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,17 @@ class WorkspacesViewController: UITableViewController {
 	}
 
 	@IBAction func didTapReloadButton(sender: AnyObject) {
+		if let barButton = sender as? UIBarButtonItem
+		{
+			var indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+			indicator.startAnimating()
+
+			barButton.customView = indicator
+			barButton.enabled = false
+
+			self.refreshButton = barButton
+		}
+
 		let sectionsCount = self.numberOfSectionsInTableView(self.tableView)
 
 		self.didLoadOrganizations = false
@@ -100,6 +112,9 @@ class WorkspacesViewController: UITableViewController {
 				alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
 				self.presentViewController(alert, animated: true, completion: nil)
 			}
+
+			self.refreshButton?.customView = nil
+			self.refreshButton?.enabled = true
 		})
 	}
 
