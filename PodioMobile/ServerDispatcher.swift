@@ -57,8 +57,8 @@ class ServerDispatcher: NSObject {
 	{
 		let request = self.buildURLRequest(url, method: method, data: data)
 
-		var requestResponse: NSURLResponse?
-		var error: NSError?
+		var requestResponse: NSURLResponse? = nil
+		var error: NSError? = nil
 		if let responseData = NSURLConnection.sendSynchronousRequest(request, returningResponse: &requestResponse, error: &error)
 		{
 			var responseCode = 0

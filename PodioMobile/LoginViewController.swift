@@ -17,6 +17,8 @@ class LoginViewController : UIViewController
 	@IBOutlet weak var label_podioMobile: UILabel!
 	@IBOutlet weak var textField_email: UITextField!
 	@IBOutlet weak var textField_password: UITextField!
+	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+	@IBOutlet weak var button_login: UIButton!
 
 	@IBOutlet var animatableViews: [UIView]!
 
@@ -56,15 +58,24 @@ class LoginViewController : UIViewController
 extension LoginViewController
 {
 	@IBAction func didTapLoginButton(sender: AnyObject) {
+		self.activityIndicator.startAnimating()
+		self.button_login.enabled = false
+
 		let username = self.textField_email.text
 		let password = self.textField_password.text
+
+		self.textField_password.resignFirstResponder()
+		self.textField_email.resignFirstResponder()
 
 		ServerManager.sharedManager.loginWithUsernamePassword(username, password: password, completion: { (result, error) -> Void in
 			if (error)
 			{
 				var alert = UIAlertController(title: "Error", message: "Please check your credentials and try again.", preferredStyle: UIAlertControllerStyle.Alert)
 				alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
-				self.presentViewController(alert, animated: true, completion: nil)
+				self.presentViewController(alert, animated: true, completion: { () -> Void in
+					self.button_login.enabled = true
+				})
+				self.activityIndicator.stopAnimating()
 			}
 			else if (result != nil)
 			{
