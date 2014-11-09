@@ -10,7 +10,8 @@ import UIKit
 
 class WorkspacesViewController: UITableViewController {
 	private var organizations: [[String : AnyObject]]?
-	private var didLoadOrganizations = false, noOrganizations = false
+	private var didLoadOrganizations = false, noOrganizations = false, preparingAnimations = false
+	private var elapsedAnimationsTime = 0.0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +41,14 @@ class WorkspacesViewController: UITableViewController {
 	}
 
 	@IBAction func didTapReloadButton(sender: AnyObject) {
+		let sectionsCount = self.numberOfSectionsInTableView(self.tableView)
+
+		self.tableView.beginUpdates()
+		self.tableView.deleteSections(NSIndexSet(indexesInRange: NSMakeRange(0, sectionsCount)), withRowAnimation: UITableViewRowAnimation.Fade)
+		self.preparingAnimations = true
+		self.tableView.endUpdates()
+
 		self.didLoadOrganizations = false
-		self.tableView.reloadData()
 		self.updateOrganizations()
 	}
 
@@ -69,7 +76,14 @@ class WorkspacesViewController: UITableViewController {
 
 					self.didLoadOrganizations = true
 					self.organizations = typedResult
-					self.tableView.reloadData()
+
+					if !self.preparingAnimations
+					{
+						self.preparingAnimations = true
+						self.tableView.deleteSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Top)
+					}
+
+					self.animateTableViewUpdate()
 				} else {
 					fail = true
 				}
@@ -84,12 +98,41 @@ class WorkspacesViewController: UITableViewController {
 			}
 		})
 	}
+
+	func animateTableViewUpdate()
+	{
+		self.preparingAnimations = false
+
+		self.tableView.beginUpdates()
+
+		let sectionsCount = self.numberOfSectionsInTableView(self.tableView)
+		self.tableView.insertSections(NSIndexSet(indexesInRange: NSMakeRange(0, sectionsCount)), withRowAnimation: UITableViewRowAnimation.None)
+
+		for (var section=0; section<sectionsCount; section++)
+		{
+			let rowsCount = self.tableView(self.tableView, numberOfRowsInSection: section)
+			var indexPaths = [NSIndexPath]()
+
+			for (var row=0; row<rowsCount; row++)
+			{
+				indexPaths.append(NSIndexPath(forItem: row, inSection: section))
+			}
+
+			self.tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Right)
+		}
+
+		self.tableView.endUpdates()
+	}
 }
 
 extension WorkspacesViewController : UITableViewDelegate, UITableViewDataSource
 {
 	override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-		if self.didLoadOrganizations
+		if self.preparingAnimations
+		{
+			return 0
+		}
+		else if self.didLoadOrganizations
 		{
 			var count = self.organizations!.count
 			self.noOrganizations = count == 0
@@ -103,7 +146,11 @@ extension WorkspacesViewController : UITableViewDelegate, UITableViewDataSource
 	}
 
 	override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		if self.didLoadOrganizations && !self.noOrganizations
+		if self.preparingAnimations
+		{
+			return 0
+		}
+		else if self.didLoadOrganizations && !self.noOrganizations
 		{
 			let organization = self.organizations![section] as [String : AnyObject]
 			var count = (organization["spaces"] as [AnyObject]).count
@@ -116,7 +163,7 @@ extension WorkspacesViewController : UITableViewDelegate, UITableViewDataSource
 	}
 
 	override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-		let identifier_workspace = "cell_workspace"
+		let identifier_workspace = "cell_workspace_plain"
 		let identifier_loading = "cell_loading"
 		let identifier_empty = "cell_empty"
 
@@ -151,5 +198,13 @@ extension WorkspacesViewController : UITableViewDelegate, UITableViewDataSource
 			return organization["name"] as? String
 		}
 		return nil
+	}
+
+	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+		tableView.deselectRowAtIndexPath(indexPath, animated: true)
+	}
+
+	override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+		return 44.0
 	}
 }
