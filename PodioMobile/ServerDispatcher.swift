@@ -38,7 +38,7 @@ class ServerDispatcher: NSObject {
 		return nil
 	}
 
-	func executeServerRequest(url: NSURL, method: String, data: NSData?) -> [String : AnyObject]
+	func buildURLRequest(url: NSURL, method: String, data: NSData?) -> NSURLRequest
 	{
 		var request = NSMutableURLRequest(URL: url)
 
@@ -49,6 +49,13 @@ class ServerDispatcher: NSObject {
 
 		request.HTTPMethod = method
 		request.HTTPBody = data
+
+		return request
+	}
+
+	func executeServerRequest(url: NSURL, method: String, data: NSData?) -> [String : AnyObject]
+	{
+		let request = self.buildURLRequest(url, method: method, data: data)
 
 		var requestResponse: NSURLResponse?
 		var error: NSError?
