@@ -24,7 +24,7 @@ class PodioMobileTests: XCTestCase {
     }
     
     func testServerManagerSingleton() {
-        XCTAssertEqual(ServerManager.sharedManager, ServerManager.sharedManager, "Server manager singleton should return the same object address on every call.")
+        XCTAssertEqual(ServerManager.sharedManager, ServerManager.sharedManager, "Server manager singleton should return the same object address on multiple calls.")
     }
 
 	func testServerManagerAuthorization() {
