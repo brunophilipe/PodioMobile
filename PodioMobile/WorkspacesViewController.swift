@@ -43,12 +43,14 @@ class WorkspacesViewController: UITableViewController {
 	@IBAction func didTapReloadButton(sender: AnyObject) {
 		let sectionsCount = self.numberOfSectionsInTableView(self.tableView)
 
+		self.didLoadOrganizations = false
+
 		self.tableView.beginUpdates()
 		self.tableView.deleteSections(NSIndexSet(indexesInRange: NSMakeRange(0, sectionsCount)), withRowAnimation: UITableViewRowAnimation.Fade)
-		self.preparingAnimations = true
+		self.tableView.insertSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Top)
+		self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)!], withRowAnimation: UITableViewRowAnimation.Top)
 		self.tableView.endUpdates()
 
-		self.didLoadOrganizations = false
 		self.updateOrganizations()
 	}
 
