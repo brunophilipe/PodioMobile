@@ -32,11 +32,8 @@ class LoginViewController : UIViewController
 
         // Do any additional setup after loading the view.
 		self.view.addKeyboardPanningWithActionHandler(nil)
-    }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+		self.navigationController?.navigationBarHidden = true
     }
 
 	override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
@@ -91,7 +88,7 @@ extension LoginViewController
 				if let resultDict = result! as? [String : AnyObject]
 				{
 					ServerManager.sharedManager.setAuthorization(resultDict["access_token"] as? String)
-					self.dismissViewControllerAnimated(true, completion: nil)
+					self.performSegueWithIdentifier("proceed", sender: nil)
 				}
 			}
 		})

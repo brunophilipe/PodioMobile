@@ -14,31 +14,19 @@ class WorkspacesViewController: UITableViewController {
 	private var elapsedAnimationsTime = 0.0
 	private var refreshButton: UIBarButtonItem!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		self.navigationController?.navigationBarHidden = false
+		self.navigationItem.hidesBackButton = true
+	}
 
+	override func viewDidAppear(animated: Bool) {
 		if ServerManager.sharedManager.isAuthenticated()
 		{
 			self.updateOrganizations()
 		}
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
-
-		if !ServerManager.sharedManager.isAuthenticated()
-		{
-			self.performSegueWithIdentifier("login", sender: nil)
-		}
-		else
-		{
-			self.updateOrganizations()
-		}
 	}
 
 	@IBAction func didTapReloadButton(sender: AnyObject) {
