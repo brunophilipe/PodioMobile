@@ -40,7 +40,7 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PodioMobile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5b-Cm-hwo">
-                                <rect key="frame" x="224" y="209" width="152.5" height="34.5"/>
+                                <rect key="frame" x="224" y="209" width="153" height="35"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="30"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -51,7 +51,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="sebrehtest+puzzle@gmail.com" borderStyle="roundedRect" placeholder="Email Address" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Hzc-zk-exg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Hzc-zk-exg">
                                 <rect key="frame" x="150" y="327" width="300" height="30"/>
                                 <color key="tintColor" red="0.31764705879999999" green="0.56862745100000001" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -65,7 +65,7 @@
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="YHA-Bl-NNh"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password1234" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cbU-Mh-Vvd">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cbU-Mh-Vvd">
                                 <rect key="frame" x="150" y="365" width="300" height="30"/>
                                 <color key="tintColor" red="0.31764705879999999" green="0.56862745100000001" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -120,6 +120,7 @@
                             <constraint firstItem="TBt-CF-tIm" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="260" id="ZHr-dA-vgx">
                                 <variation key="heightClass=compact" constant="80"/>
                                 <variation key="widthClass=compact" constant="240"/>
+                                <variation key="heightClass=compact-widthClass=compact" constant="80"/>
                             </constraint>
                             <constraint firstItem="J3a-u3-RgV" firstAttribute="centerX" secondItem="P5b-Cm-hwo" secondAttribute="centerX" id="fIr-oG-Eh7"/>
                             <constraint firstAttribute="centerX" secondItem="rsc-7l-aPR" secondAttribute="centerX" id="fov-JL-vtu"/>

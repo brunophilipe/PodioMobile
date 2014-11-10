@@ -148,10 +148,6 @@ extension LoginViewController : UITextFieldDelegate
 			self.constraint_topSpace.constant = UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation) ? 15.0 : 30.0
 			self.constraint_trailingSpace.constant = (self.view.bounds.size.width/2.0) - 150.0
 		}
-		else if (UIDevice.currentDevice().userInterfaceIdiom == UIUserInterfaceIdiom.Pad && UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation))
-		{
-			self.constraint_topSpace.constant = self.constraint_topSpace_defaultValue - 140.0
-		}
 
 		self.animatableViews.map { $0.setNeedsUpdateConstraints() }
 
