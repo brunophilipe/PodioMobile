@@ -119,12 +119,12 @@ class WorkspacesViewController: UITableViewController {
 		let sectionsCount = self.numberOfSectionsInTableView(self.tableView)
 		self.tableView.insertSections(NSIndexSet(indexesInRange: NSMakeRange(0, sectionsCount)), withRowAnimation: UITableViewRowAnimation.None)
 
-		for (var section=0; section<sectionsCount; section++)
+		for section in 0 ..< sectionsCount
 		{
 			let rowsCount = self.tableView(self.tableView, numberOfRowsInSection: section)
 			var indexPaths = [NSIndexPath]()
 
-			for (var row=0; row<rowsCount; row++)
+			for row in 0 ..< rowsCount
 			{
 				indexPaths.append(NSIndexPath(forItem: row, inSection: section))
 			}

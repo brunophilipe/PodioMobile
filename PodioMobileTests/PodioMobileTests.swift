@@ -84,7 +84,7 @@ class PodioMobileTests: XCTestCase {
 			"user-id=1297234&operation=55%2B37%2A7",
 			"template=something%20%22inside%22%20quotes&symbols=%29%28%2A%26%5E%25%24%23"]
 
-		for (var i=0; i<testCases.count; i++)
+		for i in 0 ..< testCases.count
 		{
 			let urlizedParameters = self.testDispatcher.urlizeParameters(testCases[i])!
 			XCTAssertEqual(urlizedParameters, testResults[i], "URLized parameters do not match correct output.")
