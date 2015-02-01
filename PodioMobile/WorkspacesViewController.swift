@@ -18,17 +18,23 @@ class WorkspacesViewController: UITableViewController {
 		super.viewWillAppear(animated)
 		
 		self.navigationController?.navigationBarHidden = false
-		self.navigationItem.hidesBackButton = true
 	}
 
 	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+		
 		if ServerManager.sharedManager.isAuthenticated()
 		{
 			self.updateOrganizations()
 		}
-		super.viewDidAppear(animated)
 	}
 
+	override func viewWillDisappear(animated: Bool) {
+		super.viewWillDisappear(animated)
+		
+		self.navigationController?.navigationBarHidden = true
+	}
+	
 	override func preferredStatusBarStyle() -> UIStatusBarStyle {
 		return UIStatusBarStyle.Default
 	}
@@ -187,7 +193,7 @@ extension WorkspacesViewController : UITableViewDelegate, UITableViewDataSource
 			let organization = self.organizations![indexPath.section] as [String : AnyObject]
 			let space = (organization["spaces"] as [AnyObject])[indexPath.row] as [String : AnyObject]
 
-			cell.textLabel.text = space["name"] as? String
+			cell.textLabel?.text = space["name"] as? String
 		}
 		else if self.noOrganizations
 		{

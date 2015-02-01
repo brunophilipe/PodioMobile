@@ -36,8 +36,18 @@ class LoginViewController : UIViewController
 		self.navigationController?.navigationBarHidden = true
 		self.animatableViews.map({ $0.layer.opacity = 0.0 })
     }
+	
+	override func viewWillAppear(animated: Bool) {
+		super.viewWillAppear(animated)
+		
+		self.textField_password.text = ""
+		self.activityIndicator.stopAnimating()
+		self.button_login.enabled = true
+	}
 
 	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+		
 		UIView.animateWithDuration(0.3, animations: { () -> Void in
 			self.animatableViews.map { $0.layer.opacity = 1.0 }
 			return
