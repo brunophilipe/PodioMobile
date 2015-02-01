@@ -1,1 +1,0 @@
-Please open the 'PodioMobile.xcworkspace' in Xcode file to compile the project, as the 'PodioMobile.xcproject' file does not link against the Cocoa-Pods files.
